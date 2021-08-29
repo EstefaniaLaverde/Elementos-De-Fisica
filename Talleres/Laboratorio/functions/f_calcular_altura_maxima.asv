@@ -1,0 +1,21 @@
+function [x,y,t] = f_calcular_altura_maxima(v0,theta)
+%F_CALCULAR_ALTURA_MAXIMA Summary of this function goes here
+%   Detailed explanation goes here
+
+    ay = -9.8;
+    
+    %Velocidades desagregadas:
+    v0x = v0*cosd(theta);
+    v0y = v0*sind(theta);
+    
+    %Posicion en el eje x:
+    x = x0+v0x*tfinal;
+    
+    %Posicion en el eje y:
+    y = y0 + v0y*tfinal + ((1/2)*ay*tfinal.^2);
+    
+    
+    %Tiempo donde alcanza la altura maxima
+    t = -((v0*sind(theta))/ay);
+end
+
